@@ -1,68 +1,62 @@
-﻿Console.WriteLine("Greetings! I am your virtual restocking assistant.");
+﻿internal class Program
+{
+    private static void Main(string[] args)
+    {
+        {
+            Console.WriteLine("Greetings! I am your virtual restocking assistant.");
+            int sodastotal = 100;
+            Console.WriteLine("There are " + sodastotal + " sodas in stock. How many sodas have sold today?");
+            string inputsodas = Console.ReadLine();
+            int sodassold = int.Parse(inputsodas);
+            {
+                if (!(sodassold < sodastotal))
+                    Console.WriteLine("Invalid input: Too high!");
+            }
 
-{
-    int tsvi = 100;
-    int rvi = 40;
-    Console.WriteLine("There are " + tsvi + " sodas in stock. How many sodas have sold today?");
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-    string si = Console.ReadLine();
-    var a = int.Parse(si);
-    {
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-        int svi = a;
-        if ((tsvi - svi)
-            <= rvi)
-        {
-            if (svi > tsvi)
+            sodastotal = sodastotal - sodassold;
+            Console.WriteLine("There are " + sodastotal + " sodas left in stock.");
+
+            int chipstotal = 40;
+            Console.WriteLine("There are " + chipstotal + " chips in stock. How many chips have sold today?");
+            string inputchips = Console.ReadLine();
+            int chipssold = int.Parse(inputchips);
             {
-                Console.WriteLine("Inconcievable! You couldn't have possibly sold more sodas than were in stock. Did you mistype?");
+                if (!(chipssold < chipstotal))
+                    Console.WriteLine("Invalid input: Too high!");
             }
-            Console.WriteLine("Uh Oh! Looks like the soda needs to be restocked.");
-        }
-        Console.WriteLine("There are " + (tsvi - svi) + " sodas left.");
-    }
-}
-{
-    int tsvii = 40;
-    int rvii = 20;
-    Console.WriteLine("There are " + tsvii + " chips in stock. How many chips have sold today?");
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-    string sii = Console.ReadLine();
-    var b = int.Parse(sii);
-    {
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-        int svii = b;
-        if ((tsvii - svii)
-            <= rvii)
-        {
-            if (svii > tsvii)
+
+            chipstotal = chipstotal - chipssold;
+            Console.WriteLine("There are " + chipstotal + " chips left in stock.");
+
+            int candiestotal = 60;
+            Console.WriteLine("There are " + candiestotal + " candies in stock. How many candies have sold today?");
+            string inputcandies = Console.ReadLine();
+            int candiessold = int.Parse(inputcandies);
             {
-                Console.WriteLine("Inconcievable! You couldn't have possibly sold more chips than were in stock. Did you mistype?");
+                if (!(candiessold < candiestotal))
+                    Console.WriteLine("Invalid input: Too high!");
             }
-            Console.WriteLine("Uh Oh! Looks like the chips need to be restocked.");
-        }
-        Console.WriteLine("There are " + (tsvii - svii) + " chips left.");
-    }
-}
-{
-    int tsviii = 60;
-    int rviii = 40;
-    Console.WriteLine("There are " + tsviii + " candy in stock. How much candy has sold today?");
-#pragma warning disable CS8600 // Converting null literal or possible null value to non-nullable type.
-    string siii = Console.ReadLine();
-    var c = int.Parse(siii);
-    {
-#pragma warning restore CS8600 // Converting null literal or possible null value to non-nullable type.
-        int sviii = c;
-        if ((tsviii - sviii)
-            <= rviii)
-        {
-            if (sviii > tsviii)
+
+            candiestotal = candiestotal - candiessold;
+            Console.WriteLine("There are " + candiestotal + " candies left in stock.");
+
+            int sodarestock = 40;
+            int chiprestock = 20;
+            int candyrestock = 40;
+
+            Console.WriteLine("Here are the items you must restock:");
+            if (sodarestock >= sodastotal)
             {
-                Console.WriteLine("Inconcievable! You couldn't have possibly sold more candy than was in stock. Did you mistype?");
+                Console.WriteLine("Soda needs to be restocked!");
             }
-            Console.WriteLine("Uh Oh! Looks like the candy needs to be restocked.");
+            if (chiprestock >= chipstotal)
+            {
+                Console.WriteLine("Chips need to be restocked!");
+            }
+            if (candyrestock >= candiestotal)
+            {
+                Console.WriteLine("Candy need to be restocked!");
+            }
         }
-        Console.WriteLine("There are " + (tsviii - sviii) + " candies left.");
     }
 }
